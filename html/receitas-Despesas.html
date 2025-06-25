@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gastos e Rendas - CashFlow</title>
+  <link rel="stylesheet" href="css/transacoes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>CashFlow</h2>
+    <nav>
+      <a href="dashboard.html"><i class="bi bi-house-door"></i> Dashboard</a>
+      <a href="receitas-despesas.html"><i class="bi bi-cash-coin"></i> Gastos e Rendas</a>
+      <a href="metas.html"><i class="bi bi-bullseye"></i> Metas</a>
+      <a href="assistente.html"><i class="bi bi-robot"></i> Algoritmo Mãe</a>
+      <a href="personalizacao.html"><i class="bi bi-sliders"></i> Personalização</a>
+      <a href="login.html" class="sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
+    </nav>
+  </aside>
+
+  <main class="conteudo">
+    <h1>Gastos e Rendas</h1>
+    <div class="acoes">
+      <button id="btnNovaTransacao">+ Nova Transação</button>
+      <button onclick="exportarExcel()">Exportar Excel</button>
+    </div>
+    <table id="tabelaTransacoes">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Descrição</th>
+          <th>Tipo</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Transações dinâmicas aqui -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Modal -->
+  <div id="modalTransacao" class="modal-bg">
+    <div class="modal-box">
+      <h2>Nova Transação</h2>
+      <input type="text" id="descricao" placeholder="Descrição" />
+      <input type="number" id="valor" placeholder="Valor" />
+      <select id="tipo">
+        <option value="Receita">Receita</option>
+        <option value="Despesa">Despesa</option>
+      </select>
+      <div class="botoes">
+        <button onclick="salvarTransacao()">Salvar</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/transacoes.js"></script>
+</body>
+</html>

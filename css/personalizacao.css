@@ -1,0 +1,56 @@
+@import url('./dashboard.css');
+
+.conteudo {
+  padding: 2rem;
+  flex: 1;
+}
+
+h1 {
+  font-family: var(--font-titulo);
+  color: var(--verde-escuro);
+  margin-bottom: 2rem;
+}
+
+.form-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+select, button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--azul);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #154bb8;
+}
+
+/* Tema escuro */
+body.escuro {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.escuro .form-box {
+  background-color: #2c2c2c;
+}
