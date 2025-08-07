@@ -5,30 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - CashFlow</title>
   <link rel="stylesheet" href="css/login.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body>
+<body class="login-body">
+  <div class="login-wrapper animate-fade">
     
-  <header class="navbar">
-    <img src="img/logo.png" alt="CashFlow Logo" class="logo" href="index.html">
-
-  </header>
-
-  <main class="login-container">
-    <div class="login-box">
-      <h1>Entrar no CashFlow</h1>
-      <form id="loginForm">
-        <input type="email" id="email" placeholder="E-mail" required />
-        <input type="password" id="senha" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-      </form>
-      <div class="links">
-        <a href="#">Criar conta</a> • <a href="#">Esqueci a senha</a>
-        <br>
-        <a href="index.html" class="btn">Voltar</a>
-      </div>
+    <!-- Banner com avatar -->
+    <div class="login-banner animate-slide">
+      <img src="img/logo.png" alt="Logo CashFlow" class="logo-banner" />
+      <img src="img/DonaFlow.png" alt="Mascote CashFlow" class="avatar-banner" />
+      <h1>Bem-vindo de volta!</h1>
+      <p>Gerencie suas finanças com inteligência e leveza.</p>
     </div>
-  </main>
+
+    <!-- Formulário -->
+    <div class="login-form-box animate-slide">
+      <h2>Login</h2>
+      <form class="form-login" id="formLogin">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="E-mail" required />
+          <small id="emailMsg"></small>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="senha" placeholder="Senha" required />
+        </div>
+
+        <button type="submit" class="botao-login">Entrar</button>
+
+        <p class="criar-conta">Não tem uma conta? <a href="#">Criar conta</a></p>
+      </form>
+    </div>
+  </div>
+
   <script src="js/login.js"></script>
 </body>
 </html>

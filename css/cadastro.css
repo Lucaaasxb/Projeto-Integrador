@@ -1,0 +1,101 @@
+body.cadastro-page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.6s ease;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header .avatar {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #66a649;
+  outline: none;
+}
+
+.form-group.success input {
+  border-color: #4CAF50;
+}
+
+.form-group.error input {
+  border-color: #f44336;
+}
+
+.erro-msg {
+  color: #f44336;
+  font-size: 13px;
+  display: none;
+  margin-top: 5px;
+}
+
+.form-group.error .erro-msg {
+  display: block;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #66a649;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #5bc145;
+  box-shadow: 0 0 12px #b1f3a6;
+}
+
+.link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
