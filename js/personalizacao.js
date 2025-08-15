@@ -14,6 +14,18 @@ function aplicarPreferencias() {
   // Atualiza os selects
   temaSelect.value = tema;
   fonteSelect.value = fonte;
+ 
+ // Feedback visual
+ document.body.classList.add("personalizacao-feedback");
+ setTimeout(() => document.body.classList.remove("personalizacao-feedback"), 600);
+ 
+ // Mensagem de acessibilidade
+ const msg = document.getElementById("personalizacaoMsg");
+ if (msg) {
+   msg.textContent = `Tema: ${tema.charAt(0).toUpperCase()+tema.slice(1)}, Fonte: ${fonte}`;
+   msg.style.color = "#2e7d32";
+   setTimeout(() => { msg.textContent = ""; }, 2000);
+ }
 }
 
 function salvarPreferencias() {

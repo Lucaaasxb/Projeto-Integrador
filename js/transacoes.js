@@ -11,13 +11,29 @@ function fecharModal() {
 }
 
 function salvarTransacao() {
-  const desc = document.getElementById("descricao").value;
-  const valor = parseFloat(document.getElementById("valor").value);
-  const tipo = document.getElementById("tipo").value;
+  const descInput = document.getElementById("descricao");
+  const valorInput = document.getElementById("valor");
+  const tipoInput = document.getElementById("tipo");
+  const desc = descInput.value.trim();
+  const valor = parseFloat(valorInput.value);
+  const tipo = tipoInput.value;
 
-  if (!desc || isNaN(valor)) {
-    alert("Preencha corretamente.");
+  // Validação detalhada
+  if (!desc) {
+    descInput.classList.add("invalid");
+    descInput.focus();
+    alert("Digite a descrição da transação.");
     return;
+  } else {
+    descInput.classList.remove("invalid");
+  }
+  if (isNaN(valor) || valor <= 0) {
+    valorInput.classList.add("invalid");
+    valorInput.focus();
+    alert("Informe um valor válido.");
+    return;
+  } else {
+    valorInput.classList.remove("invalid");
   }
 
   const tr = document.createElement("tr");
@@ -30,12 +46,16 @@ function salvarTransacao() {
     </td>
   `;
   tabela.appendChild(tr);
+  tr.classList.add("destaque");
+  setTimeout(() => tr.classList.remove("destaque"), 800);
+
   fecharModal();
+  alert("Transação cadastrada com sucesso!");
 
   // Limpar campos
-  document.getElementById("descricao").value = '';
-  document.getElementById("valor").value = '';
-  document.getElementById("tipo").value = 'Receita';
+  descInput.value = '';
+  valorInput.value = '';
+  tipoInput.value = 'Receita';
 }
 
 function exportarExcel() {

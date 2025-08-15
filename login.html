@@ -14,29 +14,32 @@
     <div class="login-banner animate-slide">
       <img src="img/logo.png" alt="Logo CashFlow" class="logo-banner" />
       <img src="img/DonaFlow.png" alt="Mascote CashFlow" class="avatar-banner" />
-      <h1>Bem-vindo de volta!</h1>
-      <p>Gerencie suas finanças com inteligência e leveza.</p>
+      <h1>Bem-vindo de volta ao CashFlow!</h1>
+      <p>Entre para acompanhar seu progresso financeiro, definir metas e receber dicas personalizadas.</p>
     </div>
 
     <!-- Formulário -->
     <div class="login-form-box animate-slide">
-      <h2>Login</h2>
-      <form class="form-login" id="formLogin">
+      <h2>Acesse sua conta</h2>
+      <form class="form-login" id="formLogin" autocomplete="on" aria-label="Formulário de login">
         <div class="input-group">
-          <i class="fas fa-envelope"></i>
-          <input type="email" id="email" placeholder="E-mail" required />
-          <small id="emailMsg"></small>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <input type="email" id="email" name="email" placeholder="E-mail" required aria-label="E-mail" autocomplete="email" />
+          <small id="emailMsg" aria-live="polite"></small>
         </div>
 
         <div class="input-group">
-          <i class="fas fa-lock"></i>
-          <input type="password" id="senha" placeholder="Senha" required />
+          <i class="fas fa-lock" aria-hidden="true"></i>
+          <input type="password" id="senha" name="senha" placeholder="Senha" required aria-label="Senha" autocomplete="current-password" />
         </div>
 
-        <button type="submit" class="botao-login">Entrar</button>
+        <button type="submit" class="botao-login" aria-label="Entrar">Entrar</button>
 
-        <p class="criar-conta">Não tem uma conta? <a href="#">Criar conta</a></p>
+        <p class="criar-conta">Ainda não tem uma conta? <a href="#" style="font-weight:bold; color:#2e7d32; text-decoration:underline;">Crie agora</a></p>
       </form>
+      <div style="margin-top:1.5rem; text-align:center; color:#888; font-size:0.95rem;">
+        <span>Seu acesso é seguro e protegido.</span>
+      </div>
     </div>
   </div>
 

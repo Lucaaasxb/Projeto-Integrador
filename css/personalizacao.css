@@ -25,20 +25,47 @@ label {
   font-weight: bold;
 }
 
-select, button {
+select {
   width: 100%;
   padding: 0.7rem;
   margin-bottom: 1.2rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  background: #f8f8f8;
+  transition: border-color 0.2s;
+}
+select:focus {
+  border-color: var(--azul);
+  outline: none;
 }
 
 button {
-  background-color: var(--azul);
-  color: white;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, var(--azul) 60%, var(--verde-claro) 100%);
+  color: #fff;
   font-weight: bold;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(31,111,235,0.10);
+  transition: background 0.2s, transform 0.2s;
+}
+button:hover {
+  background: var(--verde-escuro);
+  color: #fffbe7;
+  transform: scale(1.04);
+}
+/* Feedback visual ao aplicar preferências */
+.personalizacao-feedback {
+  animation: feedbackPersonalizacao 0.6s;
+}
+@keyframes feedbackPersonalizacao {
+  0% { box-shadow: 0 0 0 #1f6feb; }
+  50% { box-shadow: 0 0 24px #1f6feb44; }
+  100% { box-shadow: none; }
 }
 
 button:hover {
@@ -47,10 +74,22 @@ button:hover {
 
 /* Tema escuro */
 body.escuro {
-  background-color: #1e1e1e;
-  color: white;
+  background-color: #181818;
+  color: #f8f8f8;
 }
-
 body.escuro .form-box {
-  background-color: #2c2c2c;
+  background-color: #232323;
+  box-shadow: 0 2px 12px #0008;
+}
+body.escuro label {
+  color: #fffbe7;
+}
+body.escuro select {
+  background: #232323;
+  color: #fffbe7;
+  border-color: #444;
+}
+body.escuro button {
+  background: linear-gradient(90deg, #34592a 60%, #1f6feb 100%);
+  color: #fffbe7;
 }

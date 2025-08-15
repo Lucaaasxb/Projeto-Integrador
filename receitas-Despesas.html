@@ -18,17 +18,18 @@
       <a href="metas.html"><i class="bi bi-bullseye"></i> Metas</a>
       <a href="assistente.html"><i class="bi bi-robot"></i> Algoritmo Mãe</a>
       <a href="personalizacao.html"><i class="bi bi-sliders"></i> Personalização</a>
-      <a href="login.html" class="sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
+      <a href="index.html" class="sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
     </nav>
   </aside>
 
-  <main class="conteudo">
-    <h1>Gastos e Rendas</h1>
-    <div class="acoes">
-      <button id="btnNovaTransacao">+ Nova Transação</button>
-      <button onclick="exportarExcel()">Exportar Excel</button>
+  <main class="conteudo" aria-label="Área de controle de gastos e rendas">
+    <h1>Controle de Gastos e Rendas</h1>
+    <p style="color:#555; margin-bottom:1.5rem;">Registre suas receitas e despesas, acompanhe seu saldo e exporte seus dados para análise detalhada.</p>
+    <div class="acoes" style="display:flex; gap:1rem; margin-bottom:2rem;">
+      <button id="btnNovaTransacao" style="background:#2e7d32; color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.7rem 1.5rem; cursor:pointer;">+ Nova Transação</button>
+      <button onclick="exportarExcel()" style="background:#1976d2; color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.7rem 1.5rem; cursor:pointer;">Exportar Excel</button>
     </div>
-    <table id="tabelaTransacoes">
+    <table id="tabelaTransacoes" aria-label="Tabela de transações" style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; width:100%;">
       <thead>
         <tr>
           <th>Data</th>
@@ -39,24 +40,27 @@
       </thead>
       <tbody>
         <!-- Transações dinâmicas aqui -->
+        <tr style="color:#aaa; text-align:center;"><td colspan="4">Nenhuma transação cadastrada ainda.</td></tr>
       </tbody>
     </table>
+    <div style="margin-top:1.5rem; color:#888; font-size:0.95rem; text-align:center;">Dica: Mantenha seus registros atualizados para ter controle total do seu dinheiro.</div>
   </main>
 
   <!-- Modal -->
-  <div id="modalTransacao" class="modal-bg">
+  <div id="modalTransacao" class="modal-bg" aria-modal="true" role="dialog" style="display:none;">
     <div class="modal-box">
       <h2>Nova Transação</h2>
-      <input type="text" id="descricao" placeholder="Descrição" />
-      <input type="number" id="valor" placeholder="Valor" />
-      <select id="tipo">
+      <input type="text" id="descricao" placeholder="Descrição (ex: Salário, Mercado, Conta de Luz)" aria-label="Descrição da transação" />
+      <input type="number" id="valor" placeholder="Valor (R$)" aria-label="Valor da transação" min="0" />
+      <select id="tipo" aria-label="Tipo da transação">
         <option value="Receita">Receita</option>
         <option value="Despesa">Despesa</option>
       </select>
-      <div class="botoes">
-        <button onclick="salvarTransacao()">Salvar</button>
-        <button onclick="fecharModal()">Cancelar</button>
+      <div class="botoes" style="display:flex; gap:1rem; margin-top:1rem;">
+        <button onclick="salvarTransacao()" style="background:#2e7d32; color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.6rem 1.2rem; cursor:pointer;">Salvar</button>
+        <button onclick="fecharModal()" style="background:#ccc; color:#333; border:none; border-radius:8px; padding:0.6rem 1.2rem; cursor:pointer;">Cancelar</button>
       </div>
+      <div style="margin-top:1rem; color:#888; font-size:0.95rem;">Dica: Categorize suas transações para facilitar o acompanhamento!</div>
     </div>
   </div>
 

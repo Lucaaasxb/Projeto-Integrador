@@ -17,29 +17,32 @@
       <a href="metas.html"><i class="bi bi-bullseye"></i> Metas</a>
       <a href="assistente.html"><i class="bi bi-robot"></i> Algoritmo Mãe</a>
       <a href="personalizacao.html"><i class="bi bi-sliders"></i> Personalização</a>
-      <a href="login.html" class="sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
+      <a href="index.html" class="sair"><i class="bi bi-box-arrow-right"></i> Sair</a>
     </nav>
   </aside>
 
-  <main class="conteudo">
-    <h1>Suas Metas</h1>
-    <button id="btnNovaMeta">+ Nova Meta</button>
-    <div class="metas-container" id="metasContainer">
-      <!-- Cards dinâmicos aqui -->
+  <main class="conteudo" aria-label="Área de metas financeiras">
+    <h1>Minhas Metas Financeiras</h1>
+    <p style="color:#555; margin-bottom:1.5rem;">Defina objetivos, acompanhe seu progresso e conquiste seus sonhos com disciplina e planejamento.</p>
+    <button id="btnNovaMeta" style="background:#2e7d32; color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.7rem 1.5rem; margin-bottom:2rem; cursor:pointer;">+ Nova Meta</button>
+    <div class="metas-container" id="metasContainer" aria-live="polite">
+      <!-- Cards dinâmicos de metas aparecerão aqui -->
+      <div style="color:#aaa; text-align:center; margin-top:2rem;">Nenhuma meta cadastrada ainda. Clique em <b>+ Nova Meta</b> para começar!</div>
     </div>
   </main>
 
   <!-- Modal -->
-  <div id="modalMeta" class="modal-bg">
+  <div id="modalMeta" class="modal-bg" aria-modal="true" role="dialog" style="display:none;">
     <div class="modal-box">
       <h2>Nova Meta</h2>
-      <input type="text" id="metaTitulo" placeholder="Título da meta" />
-      <input type="number" id="metaAlvo" placeholder="Valor total (R$)" />
-      <input type="number" id="metaAtual" placeholder="Valor atual (R$)" />
-      <div class="botoes">
-        <button onclick="salvarMeta()">Salvar</button>
-        <button onclick="fecharModal()">Cancelar</button>
+      <input type="text" id="metaTitulo" placeholder="Título da meta (ex: Viagem, Reserva, Curso)" aria-label="Título da meta" />
+      <input type="number" id="metaAlvo" placeholder="Valor total (R$)" aria-label="Valor total da meta" min="0" />
+      <input type="number" id="metaAtual" placeholder="Valor atual (R$)" aria-label="Valor atual da meta" min="0" />
+      <div class="botoes" style="display:flex; gap:1rem; margin-top:1rem;">
+        <button onclick="salvarMeta()" style="background:#2e7d32; color:#fff; font-weight:bold; border:none; border-radius:8px; padding:0.6rem 1.2rem; cursor:pointer;">Salvar</button>
+        <button onclick="fecharModal()" style="background:#ccc; color:#333; border:none; border-radius:8px; padding:0.6rem 1.2rem; cursor:pointer;">Cancelar</button>
       </div>
+      <div style="margin-top:1rem; color:#888; font-size:0.95rem;">Dica: Atualize o valor atual sempre que fizer um novo aporte!</div>
     </div>
   </div>
 

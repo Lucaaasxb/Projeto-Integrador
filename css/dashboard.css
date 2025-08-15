@@ -16,7 +16,7 @@
   body {
     display: flex;
     font-family: var(--font-texto);
-    background-color: #f5f5f5;
+    background-color: #F2E6D8;
     min-height: 100vh;
   }
   
@@ -66,12 +66,85 @@
     margin-left: 220px;
     padding: 2rem;
     flex: 1;
+    background: #f9f9f9;
+    min-height: 100vh;
   }
-  
-  .conteudo h1 {
+
+  .conteudo h1, .main-content h2 {
     font-family: var(--font-titulo);
     color: var(--verde-escuro);
     margin-bottom: 1rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 1.5rem;
+    min-width: 220px;
+    flex: 1;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover, .card.destaque {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px #2e7d32aa;
+  }
+
+  .dashboard-graph {
+    margin-top: 2.5rem;
+  }
+
+  .dashboard-graph h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-graph > div {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 2rem;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 1.1rem;
+  }
+
+  .botao {
+    background: var(--verde-escuro);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .botao:hover {
+    background: var(--verde-claro);
+    color: var(--preto);
+    transform: scale(1.05);
+  }
+
+  /* Animação para destaque */
+  .destaque {
+    animation: destaqueCard 0.6s;
+  }
+  @keyframes destaqueCard {
+    0% { box-shadow: 0 0 0 #2e7d32aa; }
+    50% { box-shadow: 0 4px 16px #2e7d32aa; }
+    100% { box-shadow: 0 2px 8px #0001; }
   }
   
   @media (max-width: 768px) {
